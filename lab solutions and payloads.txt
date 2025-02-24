@@ -11,10 +11,16 @@
 
 ------> Lab: Reflected XSS in canonical link tag
 	Flow: 
-	method: 
-		add ?'accesskey='x'onclick='alert(0) to the homepage URL
+	method: add 
+	Payload: ?'accesskey='x'onclick='alert(0) to the homepage URL
 
 ------> Lab: Reflected XSS into a JavaScript string with single quote and backslash escaped
 	Flow: forgot to escafe html tags.
 	Method: break out of the script tag and construct your own script.
 	Payload: </script><script
+
+------> Lab: Reflected XSS into a JavaScript string with angle brackets and double quotes 
+	HTML-encoded and single quotes escaped
+	Flow: forgot to escape \ character.
+	Method: escape the escape character returned by the app.
+	Payload: \';alert();//
