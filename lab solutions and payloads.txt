@@ -2,13 +2,19 @@
 
 
 
------> Lab: Reflected XSS with some SVG markup allowed
+------> Lab: Reflected XSS with some SVG markup allowed
+	Flow: forgot to disallow SVG markup
 	method: brute-force the tags to see all allowed tags.
 		You'll find that <svg> and <animateTransform> tags are allowed.
 		Learn how these two tags work together. 
 	payload: <svg><animateTransform onbegin=alert(0)>
 
------> Lab: Reflected XSS in canonical link tag
+------> Lab: Reflected XSS in canonical link tag
+	Flow: 
 	method: 
 		add ?'accesskey='x'onclick='alert(0) to the homepage URL
-		
+
+------> Lab: Reflected XSS into a JavaScript string with single quote and backslash escaped
+	Flow: forgot to escafe html tags.
+	Method: break out of the script tag and construct your own script.
+	Payload: </script><script
