@@ -11,7 +11,7 @@
 
 ------> Lab: Reflected XSS in canonical link tag
 	Flow: 
-	method: add 
+	method: make the element clickable and allow it to be clicked using shortcut 
 	Payload: ?'accesskey='x'onclick='alert(0) to the homepage URL
 
 ------> Lab: Reflected XSS into a JavaScript string with single quote and backslash escaped
@@ -24,3 +24,11 @@
 	Flow: forgot to escape \ character.
 	Method: escape the escape character returned by the app.
 	Payload: \';alert();//
+
+
+------> Lab: Reflected XSS into a template literal with angle brackets, single, double quotes, 
+	backslash and backticks Unicode-escaped
+	Flow: they used template leteral which allows arbitrary javascript code to be executed 
+	in it.
+	Method: add executable js code in the template literal
+	Payload: BSH${alert(0)}
