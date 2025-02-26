@@ -25,6 +25,10 @@
 	Method: escape the escape character returned by the app.
 	Payload: \';alert();//
 
+------> Lab: Lab: DOM XSS in AngularJS expression with angle brackets and double quotes HTML-encoded
+	Flow: allows AngularJs codes without proper sanitization
+	Method: injece AngularJs code in the search function
+	Payload: {{$on.constructor('alert(1)')()}}
 
 ------> Lab: Reflected XSS into a template literal with angle brackets, single, double quotes, 
 	backslash and backticks Unicode-escaped
