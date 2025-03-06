@@ -60,6 +60,11 @@
 	Method: break out of the existing script tag and construct your own script.
 	Payload: </script><script>alert(0)</script>
 
+------> Lab: Reflected XSS into a JavaScript string with angle brackets HTML encoded
+	Flow: Allowed aphostrope (') and ;
+	Method: Breakout of the existing stiring and craft your payload
+	Payload: ';alert();//
+
 ------> Lab: Reflected XSS into a JavaScript string with angle brackets and double quotes 
 	HTML-encoded and single quotes escaped
 	Flow: forgot to escape \ character.
