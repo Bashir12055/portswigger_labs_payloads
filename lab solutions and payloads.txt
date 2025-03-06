@@ -49,7 +49,10 @@
 	Method: craft javascript psoudo-protocol valid payload and inject it in website input field
 	Payload: javascript:alert()
 
-
+------> Lab: Reflected XSS in canonical link tag
+	Flow: Allowed single quotes (') and some attributes like accesskey and onclick
+	Method: Break out of the existing attribute value and create accesskey and onclick attributes
+	Payload: 'accesskey='x'onclick='alert()
 
 ------> Lab: Reflected XSS in canonical link tag
 	Flow: 
