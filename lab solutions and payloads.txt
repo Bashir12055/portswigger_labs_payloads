@@ -52,12 +52,8 @@
 ------> Lab: Reflected XSS in canonical link tag
 	Flow: Allowed single quotes (') and some attributes like accesskey and onclick
 	Method: Break out of the existing attribute value and create accesskey and onclick attributes
-	Payload: 'accesskey='x'onclick='alert()
+	Payload: ?'accesskey='x'onclick='alert()
 
-------> Lab: Reflected XSS in canonical link tag
-	Flow: 
-	method: make the element clickable and allow it to be clicked using shortcut 
-	Payload: ?'accesskey='x'onclick='alert(0) to the homepage URL
 
 ------> Lab: Reflected XSS into a JavaScript string with single quote and backslash escaped
 	Flow: forgot to escafe html tags.
