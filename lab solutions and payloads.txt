@@ -44,6 +44,13 @@
 		payload.
 	Payload: "+autofocus+onfocus%3Dalert()+x%3D"
 
+------> Lab: Stored XSS into anchor href attribute with double quotes HTML-encoded
+	Flow: forgot and allowed javascript psoudo-protocol
+	Method: craft javascript psoudo-protocol valid payload and inject it in website input field
+	Payload: javascript:alert()
+
+
+
 ------> Lab: Reflected XSS in canonical link tag
 	Flow: 
 	method: make the element clickable and allow it to be clicked using shortcut 
