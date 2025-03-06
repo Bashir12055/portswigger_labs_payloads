@@ -36,7 +36,13 @@
 	method: brute-force the tags to see all allowed tags.
 		You'll find that <svg> and <animateTransform> tags are allowed.
 		Learn how these two tags work together. 
-	payload: <svg><animateTransform onbegin=alert(0)>
+	Payload: <svg><animateTransform onbegin=alert(0)>
+
+------> Lab: Reflected XSS into attribute with angle brackets HTML-encoded
+	Flow: Forgot to encode double quote (") in output and to filter out attribute names
+	Method: Craft a payload that'll end the existing attribute and create an event handler that'll automatically execute your
+		payload.
+	Payload: "+autofocus+onfocus%3Dalert()+x%3D"
 
 ------> Lab: Reflected XSS in canonical link tag
 	Flow: 
