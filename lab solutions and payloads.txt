@@ -71,6 +71,11 @@
 	Method: escape the escape character returned by the app.
 	Payload: \';alert();//
 
+------> Lab: Reflected XSS in a JavaScript URL with some characters blocked
+	Flow: Forgot to filter out unnecessary user input
+	Method: Craft a JS payload that can be executed without using brackets or angle brackets
+	Payload: 4&'},x=x=>{throw/**/onerror=alert,1337},toString=x,window+'',{x:'
+
 ------> Lab: Lab: DOM XSS in AngularJS expression with angle brackets and double quotes HTML-encoded
 	Flow: allows AngularJs codes without proper sanitization
 	Method: injece AngularJs code in the search function
